@@ -161,7 +161,7 @@ def run_conversation(user_msg: str):
 
 # === CLI Entry ===
 if __name__ == "__main__":
-    print("🤖 Therapist: Hello, I'm here to listen. What's on your mind?")
+    print("🤖 AI Companion: Hello, I'm here to listen. What's on your mind?")
     while True:
         try:
             user_input = input("You: ")
@@ -169,7 +169,7 @@ if __name__ == "__main__":
                 print("👋 Goodbye. Take care.")
                 break
             response = run_conversation(user_input)
-            print(f"Therapist: {response}\n")
+            print(f"AI Companion: {response}\n")
         except KeyboardInterrupt:
             print("\n👋 Session ended.")
             break

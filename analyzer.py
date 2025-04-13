@@ -86,6 +86,30 @@ Context:
     with open("psychoanalysis.txt", "w", encoding="utf-8") as f:
         json.dump(psycho_profile["psychoanalysis"], f, indent=2)
 
+        # Simulate about_user inference (you can replace with a real model later)
+    about_user_output = {
+        "certain": {
+            "The user values joy and friendship.": True,
+            "The user feels confident in their abilities.": True
+        },
+        "unsure": {
+            "The user may have recently formed new social connections.": {
+                "short_term": 0.7,
+                "long_term": 0.5
+            },
+            "The user may derive motivation from social energy.": {
+                "short_term": 0.6,
+                "long_term": 0.4
+            }
+        }
+    }
+
+    psycho_profile["about_user"] = about_user_output
+
+    with open("about_user.txt", "w", encoding="utf-8") as f:
+        json.dump(psycho_profile["about_user"], f, indent=2)
+
+
 # === Expose profile for external use ===
 def get_psycho_profile() -> Dict[str, Dict]:
     return psycho_profile
